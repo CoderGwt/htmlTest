@@ -1,0 +1,139 @@
+/*第一种方法*/
+.circle{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+    /* 使用动画 */
+    animation: rotate 100s infinite alternate;
+}
+
+/* 一个黑色半圆 */
+.circle .top_black{
+    width: 300px;
+    height: 150px;
+    border-radius: 150px 150px 0 0;
+    background-color: black;
+    position: absolute;
+    right: 0;
+}
+
+/* 较大圆点相同代码整合 */
+.circle .big_same{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* 较大黑点 */
+.circle .big_black{
+    background-color: black;
+}
+
+/* 较大白点 */
+.circle .big_white{
+    background-color: white;
+    right: 0;
+}
+
+/* 小圆点相同代码整合 */
+.circle .big_same .small_same{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+/* 小白圆点 */
+.circle .big_black .small_white{
+    background-color: white;
+}
+
+/* 小黑圆点 */
+.circle .big_white .small_black{
+    background-color: black;
+}
+
+/*动画效果*/
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(3600deg);
+    }
+}
+
+/* 第二种方法 */
+.box{
+    width: 300px;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+    animation: rotateF 100s infinite alternate;
+}
+
+.box .half_box{
+    width: 300px;
+    height: 150px;
+    border-radius: 150px 150px 0 0;
+    background-color: black;
+    position: absolute;
+    right: 0;
+}
+
+.box .big_same{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.box .big_black{
+    right: 0;
+    background-color: black;
+}
+
+.box .big_white{
+    background-color: white;
+}
+
+.small_same{
+
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.small_black{
+    left: 20%;
+    background-color: black;
+}
+
+.small_white{
+    right: 20%;
+    background-color: white;
+}
+
+@keyframes rotateF {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-3600deg);
+    }
+}
+
