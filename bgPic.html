@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>八卦图</title>
+    <style>
+        .circle{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: relative;
+            /* 使用动画 */
+            animation: rotate 100s infinite alternate;
+        }
+
+        /* 一个黑色半圆 */
+        .circle .top_black{
+            width: 300px;
+            height: 150px;
+            border-radius: 150px 150px 0 0;
+            background-color: black;
+            position: absolute;
+            right: 0;
+        }
+
+        /* 较大圆点相同代码整合 */
+        .circle .big_same{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* 较大黑点 */
+        .circle .big_black{
+            background-color: black;
+        }
+
+        /* 较大白点 */
+        .circle .big_white{
+            background-color: white;
+            right: 0;
+        }
+
+        /* 小圆点相同代码整合 */
+        .circle .big_same .small_same{
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+
+        }
+        /* 小白圆点 */
+        .circle .big_black .small_white{
+            background-color: white;
+        }
+
+        /* 小黑圆点 */
+        .circle .big_white .small_black{
+            background-color: black;
+        }
+
+        /*动画效果*/
+        @keyframes rotate {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(3600deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+<!-- 第一种方法，嵌套比较多 -->
+<div class="circle">
+
+    <div class="top_black"></div>
+
+    <!--圆点嵌套-->
+    <div class="big_same big_black">
+        <div class="small_same small_white"></div>
+    </div>
+
+    <div class="big_same big_white">
+        <div class="small_same small_black"></div>
+    </div>
+
+</div>
+
+</body>
+</html>
