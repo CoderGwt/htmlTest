@@ -1,26 +1,30 @@
+/* 最外层盒子 */
 .box{
-    width: 407px;
-}
-.star{
-    margin: 10px auto;
-    font-size: 100px;
     position: relative;
     height: 100px;
+}
+
+/* 星星盒子，绝对定位【关键】 */
+.star{
+    font-size: 100px;
+    position: absolute;
     line-height: 100px;
     top: 0;
     left: 0;
 }
 
+/* 灰色底的星星 */
 .star .default_star{
     color: #ccc;
     position: relative;
 }
 
+/* 有颜色的星星 */
 .star .score_star{
     color: orange;
     position: absolute; 
     top: 0;
     left: 0;
-    width: 30%;
+    width: 32%;
     overflow: hidden;
 }
