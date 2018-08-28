@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0
+}
+ul{
+    list-style: none;
+}
+
+.banner{
+    width: 900px;
+    height: 500px;
+    background-color: skyblue;
+    margin: 20px auto;
+    position: relative;
+}
+
+.banner .pic{
+    width: 900px;
+    height: 500px;
+}
+
+.banner .pic li{
+    position: absolute;
+    display: none;
+}
+
+.banner .pic li img{
+    width: 900px;
+    height: 500px;
+}
+
+
+.banner .pic li.show{
+    display: block;
+}
+
+/* 操作小圆点 */
+.banner .radio{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 210px;
+    transform: translateX(-50%);
+}
+
+.banner .radio ul li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.banner .radio ul li.active{
+    background-color: #fff;
+}
+
+.banner .radio ul li:hover{
+    cursor: pointer;
+    background-color: #fff;
+}
+
+.clearfix::after{
+    content:"";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
