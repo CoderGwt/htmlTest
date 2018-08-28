@@ -28,6 +28,7 @@
         }
     })
 
+    // 点击左右箭头事件--切换图片
     $trangle.click(function(){
         // 一点击（无论哪一个）都应当获取当前圆点的位置
         var index = first;
@@ -57,4 +58,24 @@
             $radio.eq(first).addClass("active")
         }
     })
+
+    // 实现自动轮播,其实就是自动执行右箭头的点击时间
+    autoPlay()
+    // 当鼠标放上去的时候，取消自动轮播
+    
+    function autoPlay(){
+        timer = setInterval(function(){
+            var index = first;
+            index ++;
+            index %= len;
+
+            $pic.eq(first).fadeOut(2000)
+            $radio.eq(first).removeClass("active")
+
+            first = index;
+
+            $pic.eq(first).fadeIn(2000)
+            $radio.eq(first).addClass("active")
+        }, 3000)
+    }
 }
