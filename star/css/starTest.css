@@ -1,0 +1,26 @@
+.box{
+    width: 407px;
+}
+.star{
+    margin: 10px auto;
+    font-size: 100px;
+    position: relative;
+    height: 100px;
+    line-height: 100px;
+    top: 0;
+    left: 0;
+}
+
+.star .default_star{
+    color: #ccc;
+    position: relative;
+}
+
+.star .score_star{
+    color: orange;
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 30%;
+    overflow: hidden;
+}
