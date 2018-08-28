@@ -18,6 +18,7 @@ ul{
     position: relative;
 }
 
+
 /* 一开始隐藏所有的图片 */
 .banner .pic li{
     position: absolute;
