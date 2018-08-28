@@ -91,6 +91,7 @@ ul{
 }
 
 /* 如果写的属性没有显示，被浏览器划掉的话， 考虑是优先级的问题。 */
+/* 左箭头 */
 .banner .left_trangle{
     border-top: 0;
     border-right: 0;
@@ -99,6 +100,7 @@ ul{
     left: 20px;
 }
 
+/* 右箭头 */
 .banner .right_trangle{
     border-left: 0;
     border-bottom: 0;

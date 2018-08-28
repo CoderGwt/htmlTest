@@ -13,7 +13,7 @@
     $radio.click(function(){
         // 获取当前点击的圆点的索引
         console.log($(this).index());
-        index = $(this).index();
+        var index = $(this).index();
 
         // 切记是：先取消，在添加
         // 取消之前那一个的active
@@ -26,13 +26,35 @@
             $radio.eq(first).addClass("active")
             $pic.eq(first).fadeIn(2000)
         }
-       
-
-
     })
 
     $trangle.click(function(){
-        index = $(this).index()
-        console.log(index)
+        // 一点击（无论哪一个）都应当获取当前圆点的位置
+        var index = first;
+
+        // 如果点击的是右箭头，当前位置的索引+1，
+        if($(this).index()){
+            index ++;
+            index %= len;
+            $pic.eq(first).fadeOut(2000)
+            $radio.eq(first).removeClass("active")
+
+            first = index;
+
+            $pic.eq(first).fadeIn(2000)
+            $radio.eq(first).addClass("active")
+        }else{
+            index --;
+            if(index < 0){
+                index = len - 1;
+            }
+            $pic.eq(first).fadeOut(2000)
+            $radio.eq(first).removeClass("active")
+
+            first = index;
+
+            $pic.eq(first).fadeIn(2000)
+            $radio.eq(first).addClass("active")
+        }
     })
 }
