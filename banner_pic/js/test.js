@@ -1,16 +1,17 @@
 {
     $pic = $(".banner .pic li");
     $radio = $(".banner .radio li")
+    $trangle = $(".banner .trangles li")
     first = 0;
     len = $pic.length
-
+    console.log($trangle)
     $pic.eq(0).show()
     $radio.eq(0).addClass("active")
 
 
-    // 点击图片的时候，显示
+    // 点击小圆点的时候，切换图片和圆点的颜色
     $radio.click(function(){
-        // 获取
+        // 获取当前点击的圆点的索引
         console.log($(this).index());
         index = $(this).index();
 
@@ -28,5 +29,10 @@
        
 
 
+    })
+
+    $trangle.click(function(){
+        index = $(this).index()
+        console.log(index)
     })
 }

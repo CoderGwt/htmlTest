@@ -1,11 +1,15 @@
+/* 很多标签都有默认的margin或padding值，所以给这个清除所有的padding和margin值 */
 *{
     margin: 0;
     padding: 0
 }
+
+/* 所有li前面的圆点去掉 */
 ul{
     list-style: none;
 }
 
+/* 设置最外层的盒子的宽高和位置。 */
 .banner{
     width: 900px;
     height: 500px;
@@ -14,22 +18,19 @@ ul{
     position: relative;
 }
 
-.banner .pic{
-    width: 900px;
-    height: 500px;
-}
-
+/* 一开始隐藏所有的图片 */
 .banner .pic li{
     position: absolute;
     display: none;
 }
 
+/* 设置图片的大小 */
 .banner .pic li img{
     width: 900px;
     height: 500px;
 }
 
-
+/* 把class有show值的图片显示出来 */
 .banner .pic li.show{
     display: block;
 }
@@ -43,6 +44,7 @@ ul{
     transform: translateX(-50%);
 }
 
+/* 小圆点样式 */
 .banner .radio ul li{
     float: left;
     width: 20px;
@@ -52,15 +54,18 @@ ul{
     margin: 0 10px;
 }
 
+/* 第一个小圆点背景颜色。或者说给有activie class属性值的小圆点添加背景颜色 */
 .banner .radio ul li.active{
     background-color: #fff;
 }
 
+/* 鼠标划上小圆点的时候，背景颜色变成了白色，并且小手 */
 .banner .radio ul li:hover{
     cursor: pointer;
     background-color: #fff;
 }
 
+/* 清除浮动 */
 .clearfix::after{
     content:"";
     display: block;
@@ -68,4 +73,36 @@ ul{
     line-height: 0;
     clear: both;
     visibility: hidden;
+}
+
+/* 左右箭头 【三角形实现】。用代码实现 */
+.banner .trangle{
+    width: 40px;
+    height: 40px;
+    border: 6px solid white;
+    transform: rotate(45deg);
+    display: none;
+}
+
+/* 当鼠标划上去的时候，显示并且小手 */
+.banner:hover .trangle{
+    display: block;
+    cursor: pointer;
+}
+
+/* 如果写的属性没有显示，被浏览器划掉的话， 考虑是优先级的问题。 */
+.banner .left_trangle{
+    border-top: 0;
+    border-right: 0;
+    position: absolute;
+    top: 230px;
+    left: 20px;
+}
+
+.banner .right_trangle{
+    border-left: 0;
+    border-bottom: 0;
+    position: absolute;
+    right: 20px;
+    top: 230px;
 }
